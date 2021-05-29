@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+:host {
+  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+  //   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  // font-family: Avenir-Black;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+div {
+  margin: 0px;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+* {
+  font-family: Avenir-Book;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: Avenir-Black;
+  src: url("assets/fonts/avenir_ff/AvenirLTStd-Black.otf");
+}
+
+@font-face {
+  font-family: Avenir-Book;
+  src: url("assets/fonts/avenir_ff/AvenirLTStd-Book.otf");
+}
+
+@font-face {
+  font-family: Avenir-Roman;
+  src: url("assets/fonts/avenir_ff/AvenirLTStd-Roman.otf");
+}
+
+input {
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-indent: 15px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: silver;
+  opacity: 1; /* Firefox */
+  // padding-left: 15px;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: silver;
+  padding-left: 15px;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: silver;
+  padding-left: 15px;
+}
+
+button {
+  background-color: #9fc1ef;
+  color: white;
+  border-radius: 10px;
+  height: 25px;
+  border: 1px solid #9fc1ef;
+}
+
+a {
+  color: #0e65d8;
+  text-decoration: none;
+}
+
+.font-light {
+  font-weight: 100;
+}
+
+// ERRORS
+
+.error-text {
+  color: red;
+}
+
+.error-input {
+  border-color: red;
+}
