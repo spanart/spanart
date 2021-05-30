@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Apollo, gql, QueryRef } from 'apollo-angular';
+import { Apollo, gql } from 'apollo-angular';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../service/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,10 @@ import { Apollo, gql, QueryRef } from 'apollo-angular';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private apollo: Apollo, private fb: FormBuilder, private router: Router) { }
+  constructor(private apollo: Apollo, private fb: FormBuilder, private router: Router, private authService: AuthService) { }
+
+  faEye = faEye;
+  faEyeSlash = faEyeSlash;
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -18,8 +23,13 @@ export class LoginComponent implements OnInit {
   });
 
   loginFailed = false;
+  showPassword = false;
 
   ngOnInit(): void {
+  }
+
+  toggleShowPass() {
+    this.showPassword = !this.showPassword;
   }
 
   login() {
@@ -29,14 +39,14 @@ export class LoginComponent implements OnInit {
 
     const STATIONS_QUERY = gql`
     mutation {
-      logIn1497517424: logIn(
+      login: logIn(
         input: { email: "${email}", password: "${pass}" }
       ) {
-        authToken1425377717: authToken
+        authToken: authToken
         query {
-          userByEmail2382179773: userByEmail(email: "${email}") {
-            id1207450440: id
-            email3832528868: email
+          userByEmail: userByEmail(email: "${email}") {
+            id: id
+            email: email
           }
         }
       }
@@ -48,10 +58,11 @@ export class LoginComponent implements OnInit {
       variables: {}
     });
 
-    query.subscribe(({data}) => {
+    query.subscribe(({data}: any) => {
       console.log(data);
       this.loginFailed = true;
-      this.router.navigate(['/reset-password']);
+      this.authService.saveUserData(email, data.login.authToken);
+      this.router.navigate(['/home']);
     }, (error) => {
       console.log('E', error);
       this.loginFailed = true;
@@ -60,3 +71,7 @@ export class LoginComponent implements OnInit {
   }
 
 }
+function LoginResp(LoginResp: any, arg1: { mutation: import("graphql").DocumentNode; variables: {}; }) {
+  throw new Error('Function not implemented.');
+}
+

@@ -1,18 +1,21 @@
 <div fxLayout="row" fxLayoutAlign="stretch stretch">
-    <app-home fxFlex="65"></app-home>
+    <app-logo-screen fxFlex="65"></app-logo-screen>
     <div fxFlex="35" fxLayout="column" fxLayoutAlign="center stretch">
-        <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="50" fxLayoutGap="10px" [formGroup]="loginForm">
+        <form fxLayout="column" fxLayoutAlign="center stretch" fxFlex="50" fxLayoutGap="10px" [formGroup]="loginForm">
             <div fxLayout="row" fxLayoutAlign="start center" fxFlex="10">
                 <label fxFlexOffset="20" fxFlex="60">Enter ReadyMade :</label>
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" fxFlex="10">
-                <input [class]="(loginForm.controls.email.invalid && loginForm.controls.email.value !== '') || loginFailed ? 'error-input' : ''" 
-                fxFlexOffset="20" placeholder="Email Address" fxFlex="60" formControlName="email"/>
+                <input
+                    [class]="(loginForm.controls.email.invalid && loginForm.controls.email.value !== '') || loginFailed ? 'error-input' : ''"
+                    fxFlexOffset="20" placeholder="Email Address" fxFlex="60" formControlName="email" />
             </div>
             <div fxLayout="row" fxLayoutAlign="start center" fxFlex="10">
-                <input [class]="(loginForm.controls.password.invalid && loginForm.controls.password.value !== '') || loginFailed ? 'error-input' : ''" 
-                fxFlexOffset="20" placeholder="Password" fxFlex="60" formControlName="password"/>
-                <i class="bi bi-eye-slash" id="togglePassword"></i>
+                <input
+                    [class]="(loginForm.controls.password.invalid && loginForm.controls.password.value !== '') || loginFailed ? 'error-input' : ''"
+                    fxFlexOffset="20" placeholder="Password" fxFlex="60" formControlName="password"
+                    [type]="showPassword ? 'text' : 'password'" name="password" autocomplete="on" />
+                <fa-icon class="fa-eye" [icon]="showPassword ? faEye : faEyeSlash" (click)="toggleShowPass()"></fa-icon>
             </div>
             <div *ngIf="loginFailed" fxLayout="row" fxLayoutAlign="start center" fxFlex="10">
                 <label class="error-text" fxFlexOffset="20" fxFlex="60">Incorrect email or password</label>
@@ -24,6 +27,6 @@
             <div fxLayout="row" fxLayoutAlign="start center" fxFlex="10">
                 <label fxFlexOffset="20" fxFlex="60">Don't have an account? <a>Register</a></label>
             </div>
-        </div>
+        </form>
     </div>
 </div>

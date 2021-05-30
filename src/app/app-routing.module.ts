@@ -5,7 +5,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'reset-password', component: ResetPasswordComponent }
+  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'home', loadChildren: () => import('./internal/internal.module').then(m => m.InternalModule)}
 ];
 
 @NgModule({

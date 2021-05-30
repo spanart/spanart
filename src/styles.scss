@@ -46,6 +46,7 @@ input {
   border: 1px solid black;
   border-radius: 10px;
   text-indent: 15px;
+  outline: none;
 }
 
 ::placeholder {
@@ -92,4 +93,9 @@ a {
 
 .error-input {
   border-color: red;
+}
+
+// FONT AWESOME
+fa-icon {
+  cursor: pointer;
 }

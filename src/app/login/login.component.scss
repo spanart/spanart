@@ -1,4 +1,13 @@
 input {
-    text-indent: 15px;
-    outline: none;
+  text-indent: 15px;
+  outline: none;
+}
+
+.fa-eye-slash:hover,
+.fa-eye:hover {
+  cursor: pointer;
+}
+
+.fa-eye {
+  margin-left: -35px;
 }
