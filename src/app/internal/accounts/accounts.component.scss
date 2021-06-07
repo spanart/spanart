@@ -1,16 +1,55 @@
 .seperator {
   //   border-bottom: 1px dotted black;
-  width: 80%;
+  // width: 80%;
+  width: 100%;
   background-image: linear-gradient(
     to right,
-    black 40%,
+    black 65%,
     rgba(255, 255, 255, 0) 0%
   );
   background-position: bottom;
-  background-size: 70px 2px;
+  background-size: 64px 2px;
   background-repeat: repeat-x;
 }
 
 label {
   font-size: 1.25em;
+}
+
+.main {
+  // width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow: auto;
+}
+
+.header {
+  width: 100%;
+}
+
+.fa-search {
+  margin-left: -25px;
+  padding-top: 10px;
+}
+
+.sort {
+  height: 50%;
+  padding-top: 5px;
+}
+
+// move to card-img component
+
+.card {
+  height: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.card-img {
+  background: url(/assets/images/temp.png) 50% 50% no-repeat;
+  width: 100px;
+  height: 100px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }

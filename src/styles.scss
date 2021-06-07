@@ -18,7 +18,7 @@ div {
 }
 
 body {
-  overflow: hidden;
+  overflow: auto;
   font-family: "Avenir-Book";
 }
 
@@ -99,4 +99,14 @@ a {
 // FONT AWESOME
 fa-icon {
   cursor: pointer;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.button-internal {
+  color: white;
+  background-color: black;
+  border-radius: 10px;
 }

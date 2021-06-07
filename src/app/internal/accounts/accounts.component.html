@@ -1,12 +1,46 @@
 <app-header></app-header>
 <p>Accounts works! - {{user}}</p>
 <button (click)="logout()">Logout</button>
-<div fxLayout="column" fxLayoutAlign="stretch center">
-    <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="10">
+<div class="main" fxLayout="column" fxLayoutAlign="stretch center" fxLayoutGap="25px">
+    <div class="header" fxLayout="row wrap" fxLayoutAlign="stretch stretch" fxFlex="5">
         <label><u>Accounts</u></label>
     </div>
-    <div class=" seperator" fxLayout="row" fxLayoutAlign="center stretch" fxFlex="2"></div>
-    <div class="search" fxFlex="auto">
-        <input>
+    <div class="seperator" fxLayout="row" fxLayoutAlign="center stretch" fxFlex="2"></div>
+    <div class="width-100" fxLayout="row" fxFlex="10" fxLayoutAlign="space-between stretch" fxLayoutGap="25px">
+        <div class="search width-100" fxLayout="row" fxFlex="100" fxLayoutAlign="start stretch">
+            <input fxFlex="25">
+            <fa-icon class="fa-search" [icon]="faSearch"></fa-icon>
+            <img src="../../../assets/images/sort.svg" fxFlex="6" class="sort" />
+        </div>
+        <div fxLayout="row" fxFlex="15" fxLayoutAlign="end center">
+            <button class="button-internal">New Account</button>
+        </div>
+    </div>
+
+    <div fxLayout="row wrap" fxFlex="50" fxLayoutAlign="space-between start" fxLayoutGap="5px"
+        style="width: 100%;overflow: auto;">
+        <div class="card" fxLayout="row" fxLayoutAlign="start center" fxFlex="40" *ngFor="let card of cards"
+            fxLayoutGap="5px">
+            <div class="card-img" fxFlex="25"></div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex="75">
+                <label fxFlex="90">We are all in this together</label>
+                <a fxFlex="10">{{card}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header" fxLayout="row wrap" fxLayoutAlign="stretch stretch" fxFlex="5">
+        <label><u>Demos</u></label>
+    </div>
+    <div class="seperator" fxLayout="row" fxLayoutAlign="center stretch" fxFlex="2"></div>
+    <div class="width-100" fxLayout="row" fxFlex="10" fxLayoutAlign="space-between stretch" fxLayoutGap="25px">
+        <div class="search width-100" fxLayout="row" fxFlex="100" fxLayoutAlign="start stretch">
+            <input fxFlex="25">
+            <fa-icon class="fa-search" [icon]="faSearch"></fa-icon>
+            <img src="../../../assets/images/sort.svg" fxFlex="6" class="sort" />
+        </div>
+        <div fxLayout="row" fxFlex="15" fxLayoutAlign="end center">
+            <button class="button-internal">Make a Demo</button>
+        </div>
     </div>
 </div>
