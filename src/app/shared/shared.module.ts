@@ -12,7 +12,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    
   ],
   exports: [
     FontAwesomeModule,
