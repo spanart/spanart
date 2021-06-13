@@ -17,7 +17,8 @@ import { NewAccountComponent } from './accounts/new-account/new-account.componen
   imports: [
     CommonModule,
     InternalRoutingModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule
   ]
 })
 export class InternalModule { }
