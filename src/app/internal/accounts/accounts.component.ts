@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { MatDialog } from '@angular/material/dialog';
+import { NewAccountComponent } from './new-account/new-account.component';
 
 @Component({
   selector: 'app-accounts',
@@ -9,7 +11,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class AccountsComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private dialog: MatDialog) { }
 
   user: string = '';
   faSearch = faSearch;
@@ -29,7 +31,7 @@ export class AccountsComponent implements OnInit {
     }
   }
 
-  logout() {
-    this.authService.logout();
+  newAccount(): void {
+    const dialogRef = this.dialog.open(NewAccountComponent, { width: '399px', height: '547px'})
   }
 }

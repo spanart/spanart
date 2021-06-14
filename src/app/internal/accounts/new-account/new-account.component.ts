@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-new-account',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
+
+  faTimesCircle = faTimesCircle;
+  stepOneFg: any;
 
   ngOnInit(): void {
+    this.stepOneFg = this.fb.group({});
+  }
+
+  dropped(event: any) {
+    console.log(event);
+  }
+
+  fileOver(event: any) {
+    console.log(event);
+  }
+
+  fileLeave(event: any) {
+    console.log(event);
   }
 
 }

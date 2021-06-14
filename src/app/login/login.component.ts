@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
 
     query.subscribe(({data}: any) => {
       console.log(data);
-      this.loginFailed = true;
+      this.loginFailed = false;
       this.authService.saveUserData(email, data.login.authToken);
       this.router.navigate(['/home']);
     }, (error) => {

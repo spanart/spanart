@@ -11,7 +11,7 @@
             <img src="../../../assets/images/sort.svg" fxFlex="6" class="sort" />
         </div>
         <div fxLayout="row" fxFlex="15" fxLayoutAlign="end center">
-            <button class="button-internal">New Account</button>
+            <button class="button-internal" (click)="newAccount()">New Account</button>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
     </div>
     <div class="seperator" fxLayout="row" fxLayoutAlign="center stretch" fxFlex="2"></div>
     <div class="width-100" fxLayout="row" fxFlex="10" fxLayoutAlign="space-between stretch" fxLayoutGap="25px">
-        <<div class="search width-100" fxLayout="row" fxFlex="100" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <div class="search width-100" fxLayout="row" fxFlex="100" fxLayoutAlign="start center" fxLayoutGap="15px">
             <input fxFlex="25">
             <fa-icon class="fa-search" [icon]="faSearch"></fa-icon>
             <img src="../../../assets/images/sort.svg" fxFlex="6" class="sort" />

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LogoScreenComponent } from './logo-screen/logo-screen.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,12 +14,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     FontAwesomeModule,
     FlexLayoutModule,
-    
+    ReactiveFormsModule
   ],
   exports: [
     FontAwesomeModule,
     LogoScreenComponent,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

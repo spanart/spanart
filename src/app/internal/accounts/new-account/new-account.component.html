@@ -1,1 +1,33 @@
-<p>new-account works!</p>
+<mat-horizontal-stepper [linear]="false" #stepper>
+    <mat-step [stepControl]="stepOneFg">
+        <form [formGroup]="stepOneFg">
+            <div fxLayout="column" fxLayoutAlign="start stretch">
+                <div fxLayout="row" fxLayoutAlign="space-between start" fxFlex="7">
+                    <label class="modal-header">New Account:</label>
+                    <img src="../../../../assets/images/close.svg" />
+                </div>
+                <div fxLayout="row" fxFlex="5">
+                    <label class="modal-text">Title* :</label>
+                </div>
+                <div fxLayout="row" fxFlex="10">
+                    <input fxFlex="100" placeholder="Account Name">
+                </div>
+                <div fxLayout="row" fxFlex="5">
+                    <label class="modal-text">Account Image* :</label>
+                </div>
+                <!-- <div fxLayout="row" fxFlex="10"> -->
+                <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+                    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                        Drag here or&nbsp;<u>Upload</u>
+                    </ng-template>
+                </ngx-file-drop>
+                <!-- </div> -->
+                <div fxLayout="row" fxFlex="5">
+                    <label class="modal-text">*This image is public-facing.</label>
+                </div>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="stepOneFg">asdasdasdasdsdasdasdasd</mat-step>
+</mat-horizontal-stepper>

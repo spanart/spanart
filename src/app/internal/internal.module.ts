@@ -6,6 +6,9 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { NewAccountComponent } from './accounts/new-account/new-account.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NgxFileDropModule } from 'ngx-file-drop';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { NewAccountComponent } from './accounts/new-account/new-account.componen
     CommonModule,
     InternalRoutingModule,
     SharedModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxFileDropModule,
+    MatStepperModule
   ]
 })
 export class InternalModule { }
