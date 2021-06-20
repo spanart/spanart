@@ -1,5 +1,5 @@
-<mat-horizontal-stepper [linear]="false" #stepper>
-    <mat-step [stepControl]="stepOneFg">
+<app-stepper>
+    <cdk-step> 
         <form [formGroup]="stepOneFg">
             <div fxLayout="column" fxLayoutAlign="start stretch">
                 <div fxLayout="row" fxLayoutAlign="space-between start" fxFlex="7">
@@ -27,7 +27,8 @@
                     <label class="modal-text">*This image is public-facing.</label>
                 </div>
             </div>
-        </form>
-    </mat-step>
-    <mat-step [stepControl]="stepOneFg">asdasdasdasdsdasdasdasd</mat-step>
-</mat-horizontal-stepper>
+        </form>    
+    </cdk-step>
+    <cdk-step> <p>This is any content of "Step 2"</p> </cdk-step>
+  </app-stepper>
+  
