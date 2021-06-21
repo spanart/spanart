@@ -9,6 +9,7 @@ import { NewAccountComponent } from './accounts/new-account/new-account.componen
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     SharedModule,
     MatDialogModule,
     NgxFileDropModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSelectModule
   ]
 })
 export class InternalModule { }

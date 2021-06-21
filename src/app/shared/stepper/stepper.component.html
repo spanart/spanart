@@ -1,20 +1,18 @@
-<section class="example-container">
-    <header>
+<section class="example-container" fxLayout="column" fxFlexAlign="stretch center" fxFlex="100">
+  <!-- <header>
       <h2>Step {{ selectedIndex + 1 }}/{{ steps.length }}</h2>
-    </header>
-  
-    <div [ngTemplateOutlet]="selected ? selected.content : null"></div>
-  
-    <footer class="example-step-navigation-bar">
-      <button class="example-nav-button" cdkStepperPrevious>&larr;</button>
-      <button
-        class="example-step"
-        [class.example-active]="selectedIndex === i"
-        *ngFor="let step of steps; let i = index"
-        (click)="selectStepByIndex(i)"
-      >
-        Step {{ i + 1 }}
+    </header> -->
+
+  <div [ngTemplateOutlet]="selected ? selected.content : null"></div>
+
+  <footer class="example-step-navigation-bar" fxFlexAlign="space-between center">
+    <!-- <button class="example-nav-button" cdkStepperPrevious>&larr;</button> -->
+    <div fxFlexAlign="space-evenly center" fxFlex="75" fxLayoutGap="15px">
+      <button class="example-step" [class.example-active]="selectedIndex === i"
+        *ngFor="let step of steps; let i = index" (click)="selectStepByIndex(i)">
+        {{ i + 1 }}
       </button>
-      <button class="example-nav-button" cdkStepperNext>&rarr;</button>
-    </footer>
-  </section>
+    </div>
+    <button class="button-internal" cdkStepperNext>Next</button>
+  </footer>
+</section>

@@ -1,7 +1,7 @@
 <app-stepper>
-    <cdk-step> 
-        <form [formGroup]="stepOneFg">
-            <div fxLayout="column" fxLayoutAlign="start stretch">
+    <cdk-step fxLayout="column" fxLayoutAlign="stretch center">
+        <form [formGroup]="stepOneFg" fxFlex="100">
+            <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
                 <div fxLayout="row" fxLayoutAlign="space-between start" fxFlex="7">
                     <label class="modal-header">New Account:</label>
                     <img src="../../../../assets/images/close.svg" />
@@ -27,8 +27,100 @@
                     <label class="modal-text">*This image is public-facing.</label>
                 </div>
             </div>
-        </form>    
+        </form>
     </cdk-step>
-    <cdk-step> <p>This is any content of "Step 2"</p> </cdk-step>
-  </app-stepper>
-  
+    <cdk-step>
+        <form [formGroup]="stepOneFg" fxFlex="100">
+            <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+                <div fxLayout="row" fxLayoutAlign="space-between start" fxFlex="7">
+                    <label class="modal-header">Location:</label>
+                    <img src="../../../../assets/images/close.svg" />
+                </div>
+                <!-- <div fxLayout="row" fxFlex="5"> -->
+                <label class="modal-text">Country* :</label>
+                <!-- </div> -->
+                <!-- <div fxLayout="row" fxFlex="10"> -->
+                <mat-form-field>
+                    <mat-select>
+                        <!-- <mat-label>Country</mat-label> -->
+                        <mat-select-trigger>
+
+                        </mat-select-trigger>
+                        <mat-option></mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- </div> -->
+                <label class="modal-text">Address 1 :</label>
+                <mat-form-field>
+                    <mat-select>
+                        <mat-select-trigger>
+
+                        </mat-select-trigger>
+                        <mat-option></mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <label class="modal-text">Address 2 :</label>
+                <mat-form-field>
+                    <mat-select>
+                        <mat-select-trigger>
+
+                        </mat-select-trigger>
+                        <mat-option></mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <label class="modal-text">City* :</label>
+                <mat-form-field>
+                    <mat-select>
+                        <mat-select-trigger>
+
+                        </mat-select-trigger>
+                        <mat-option></mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <div fxFlex="60">
+                        <label class="modal-text">State :</label>
+                        <mat-form-field>
+                            <mat-select>
+                                <mat-select-trigger>
+
+                                </mat-select-trigger>
+                                <mat-option></mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="40">
+                        <label class="modal-text">Pin Code :</label>
+                        <input />
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </cdk-step>
+    <cdk-step fxLayout="column" fxLayoutAlign="stretch center">
+        <form [formGroup]="stepOneFg" fxFlex="100">
+            <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+                <div fxLayout="row" fxLayoutAlign="space-between start" fxFlex="7">
+                    <label class="modal-header">Contacts:</label>
+                    <img src="../../../../assets/images/close.svg" />
+                </div>
+                <div fxLayout="row" fxFlex="5">
+                    <label class="modal-text">Primary Contact* :</label>
+                </div>
+                <div fxLayout="row" fxFlex="10">
+                    <input fxFlex="100" placeholder="First Name">
+                </div>
+                <div fxLayout="row" fxFlex="10">
+                    <input fxFlex="100" placeholder="Last Name">
+                </div>
+                <div fxLayout="row" fxFlex="10">
+                    <input fxFlex="100" placeholder="Email">
+                </div>
+                <div fxLayout="row" fxFlex="10" fxLayoutAlign="end center">
+                    <button class="button-internal-white">+ Add Another</button>
+                </div>
+            </div>
+        </form>
+    </cdk-step>
+</app-stepper>
